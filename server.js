@@ -2,10 +2,11 @@
 const express = require('express');
 const mongoose = require ('mongoose');
 const logger = require("morgan");
+const path = require('path');
 require('dotenv').config();
 
 //getting routes
-const routes = require('./routes');
+const workout = require('./routes/workoutRoutes');
 
 //requiring schemas
 const {Workout, Exercise}= require ('./models');
@@ -28,6 +29,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 
     .catch(error => console.log(error));
 
+    mongoose.set('debug', true);
 
 //setting up express as a function
 const app = express();
@@ -36,11 +38,15 @@ const app = express();
 //logger middleware (dev: color coded)
 app.use(logger("dev"));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 //middlewares to get values from req.body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public"));
+//requiring routes
+app.use(workout);
+app.use(require('./routes/htmlRoutes.js'));
 
 app.listen(PORT, ()=>{
     console.log(`Listening on http://localhost:${PORT}`);

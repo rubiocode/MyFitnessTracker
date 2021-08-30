@@ -1,17 +1,17 @@
-// destructuring mongoose
-const { model, Schema } = require('mongoose');
+module.exports = function () {
+    var mongoose = require('mongoose'),
+        Exercise = require('./Exercise.js'),
+        exerciseSchema = mongoose.model('Exercise').schema,
+        Schema = mongoose.Schema;
 
-//requiring exerciseSchema
+    //Creating schema
+    const workoutSchema = new Schema({
+        day: {
+            type: Date,
+            default: () => new Date(),
+        },
+        exercises: [exerciseSchema]
+    });
 
-const exerciseSchema = require('./Exercise');
-
-//Creating schema
-const workoutSchema = new Schema({
-    day: {
-        type: Date,
-        default: () => new Date(),
-    },
-    exercises: [exerciseSchema]
-});
-
-module.exports = model ('Workout', workoutSchema);
+    return mongoose.model('Workout', workoutSchema);
+}
