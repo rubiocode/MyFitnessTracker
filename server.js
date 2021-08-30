@@ -9,13 +9,13 @@ require('dotenv').config();
 //const workout = require('./routes/workoutRoutes');
 
 //requiring schemas
-const {Workout}= require ('./models');
+//const {Workout}= require ('./models');
 
 //setting up Port
 const PORT= process.env.PORT || 3001;
 
 //different in production // if db not created yet mongoose will create db automatically
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     //giving me errors to connect...
