@@ -5,7 +5,7 @@
 
 Built with NoSQL: MongoDB and Mongoose package
 
-URL of the Heroku deployed application: 
+URL of the Heroku deployed application: https://pure-citadel-40908.herokuapp.com/
 
 URL of the GitHub repository: https://github.com/rubiocode/MyFitnessTracker
 
@@ -46,7 +46,7 @@ If the exercise is a cardio exercise, I should be able to track my distance trav
 
 ## View
 
-To view the Heroku deployed webpage click [here]().
+To view the Heroku deployed webpage click [here](https://pure-citadel-40908.herokuapp.com/).
 
 This is what the application looks like:
 
