@@ -13,7 +13,7 @@ const workoutSchema = new Schema(
                 type: {
                     type: String,
                     trim: true,
-                    required: 'Please enter the type of exercise.',
+                    required: 'Please choose a type of exercise.',
                 },
                 name: {
                     type: String,
@@ -38,6 +38,11 @@ const workoutSchema = new Schema(
                 },
             }
         ]
+    },
+    {
+        toJSON: {
+            virtuals: true
+        },
     }
 );
 

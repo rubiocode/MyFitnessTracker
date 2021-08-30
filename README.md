@@ -1,61 +1,126 @@
-# Unit 18 Nosql Homework: Workout Tracker
+<div align="center">
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+# My Fitness Tracker
 
-## User Story
 
-* As a user, I want to be able to view, create, and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+Built with NoSQL: MongoDB and Mongoose package
 
-## Business Context
+URL of the Heroku deployed application: 
 
-A consumer will reach their fitness goals more quickly when they track their workout progress.
+URL of the GitHub repository: https://github.com/rubiocode/MyFitnessTracker
 
-## Acceptance Criteria
+</div>
 
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
+## Table of Contents 
 
-The user should be able to:
+* [Description](#description)
+    * [User Story](#user-story)
+    * [Acceptance Criteria](#acceptance-criteria)
+* [View](#view)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Built With](#built-with)
+* [Future Improvements](#future-improvements)
+* [License](#license)
 
-  * Add exercises to the most recent workout plan.
+## Description
 
-  * Add new exercises to a new workout plan.
+_My Fitness Tracker_ is a simple and easy to use workout tracker to log and keep track of your daily workouts. The user is able to add multiple exercises to a workout session, complete the session for the day, or keep adding more exercises to the workout session. Then the user is able to head over to the dashboard where the user can see their workout session stats for the past seven days.  
 
-  * View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
+### User Story
 
-  * View the total duration of each workout from the past seven workouts on the `stats` page.
+```md
+As a user, 
+I want to be able to view create and track daily workouts. 
+I want to be able to log multiple exercises in a workout on a given day. 
+I should also be able to track the name, type, weight, sets, reps, and duration of exercise. 
+If the exercise is a cardio exercise, I should be able to track my distance traveled.
+```
 
-> **Important:** Look into using a MongoDB aggregate function to dynamically add up and return the total duration for each workout. Check out the [MongoDB documentation on the $addFields](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/), the [MongoDB documentation on the $sum operator](https://docs.mongodb.com/manual/reference/operator/aggregation/sum/), and the [Mongoose documentation on aggregate functions](https://mongoosejs.com/docs/api.html#aggregate_Aggregate) to learn how it can be accomplished.
+### Acceptance Criteria
 
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
+- [x] Add exercisesto most reccent workout plan. ** Click _Continue Workout_ **
+- [x] Add new exercises to a new workout plan. ** Click _New Workout_ **
+- [x] View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
+- [x] View the total duration of each workout from the past seven workouts on the `stats` page.
 
-  * [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
+## View
 
-  * [Deploy with Heroku and MongoDB Atlas](../04-Important/MongoAtlas-Deploy.md)
+To view the Heroku deployed webpage click [here]().
 
-## Commit Early and Often
+This is what the application looks like:
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for the following two reasons:
+Landing Page: 
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills.
+<img src="public/img/Main.png" alt="Landing Page" style="height: 20rem ; width:20 rem;"/>
 
-2. Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
 
-Follow these guidelines for committing:
 
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
+Dashboard Page:
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
+![ezgif com-gif-maker (15)](https://user-images.githubusercontent.com/78938193/131294351-ce6db5f2-cc29-4a7d-a992-24e0569bf9be.gif)
 
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
+## Installation 
 
-* Test your application before you commit to ensure functionality at every step in the development process.
+To start using this _My Fitness Tracker_ application you must follow these instructions:
 
-We want you to have well over 200 commits by graduation, so commit early and often!
+* Fork and clone this repository and save it to your computer. For help how to fork and clone click [here](https://guides.github.com/activities/forking/) 
 
-## Submission on BCS
+* Download Postman to test the APIs. To download Postman click [here](https://www.postman.com/downloads/)
 
-You are required to submit the following:
+* Open your terminal and make sure noje.js is installed. To download node.js click [here](https://nodejs.org/en/download/)
 
-* The URL to the deployed application
+* Run command _npm i_ to install all the dependencies in this repository. 
 
-* The URL to the GitHub repository
+## Usage
+
+_My Fitness Tracker_ application, the user can add a new workout, add exercises to an existing workout in a given day.
+
+Click on New Workout to add a new workout, choose a type of exercise, keep adding exercises or complete workout. After a workout has been completed the user can go back and click on Contue Workout to keep adding more exercises to their active workout session. 
+
+If you are cloning this repository, run the following commands at the root of your project:
+
+`npm run seed` This will seed your file
+
+`npm start` or `nodemon server.js` to start your server
+
+
+## Built With
+
+* [Express](https://expressjs.com/) - A Node.js web application server framework used to build web applications.
+
+* [JavaScript ES6](https://www.w3schools.com/Js/js_es6.asp) - Programming language that creates dynamic website content. ES6 or ECMAScript 6 was the second major revision to JavaScript.
+
+* [Node.js](https://nodejs.dev/learn/) - Node.js is an open-source, low-level, back-end JavaScript runtime platform that uses asynchronous programming and is a popular tool for almost any kind of project!.
+
+* [dotenv package](https://nodejs.dev/learn/) - A package to store enviromental variables.
+
+* [mongoose package](https://www.npmjs.com/package/mongoose) - Mongoose is a MongoDB object modeling tool designed to work in asynchronous enviroment. 
+
+* [morgan package = dev](https://www.npmjs.com/package/morgan) - 'Dev' specific adds color to the terminal request routes. Helps makes it easier to spot broken routes in the terminal. 
+
+* [path package](https://www.npmjs.com/package/npm-path) 
+
+* [MongoDB](https://www.tutorialspoint.com/mongodb/index.htm) - MongoDB is a NoSQL open-source database. 
+
+
+## Credits
+
+Frontend starting files provided © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+
+## License
+
+![badge](https://img.shields.io/badge/License-mit-blue)
+
+Copyright 2021 Rubidia Rubio. Licensed under the [MIT License](https://opensource.org/licenses/MIT)
+
+All Rights Reserved. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
