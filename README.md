@@ -39,7 +39,7 @@ If the exercise is a cardio exercise, I should be able to track my distance trav
 
 ### Acceptance Criteria
 
-- [x] Add exercisesto most reccent workout plan. ** Click _Continue Workout_ **
+- [x] Add exercises to most reccent workout plan. ** Click _Continue Workout_ **
 - [x] Add new exercises to a new workout plan. ** Click _New Workout_ **
 - [x] View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
 - [x] View the total duration of each workout from the past seven workouts on the `stats` page.
