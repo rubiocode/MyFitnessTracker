@@ -6,10 +6,10 @@ const path = require('path');
 require('dotenv').config();
 
 //getting routes
-const workout = require('./routes/workoutRoutes');
+//const workout = require('./routes/workoutRoutes');
 
 //requiring schemas
-const {Workout, Exercise}= require ('./models');
+const {Workout}= require ('./models');
 
 //setting up Port
 const PORT= process.env.PORT || 3001;
@@ -19,8 +19,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     //giving me errors to connect...
-    //useCreateIndex: true,
-    //useFindAndModify: false,
+    useCreateIndex: true,
+    useFindAndModify: false,
     
 })
     .then(() => {
@@ -29,7 +29,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 
     .catch(error => console.log(error));
 
-    mongoose.set('debug', true);
 
 //setting up express as a function
 const app = express();
@@ -45,7 +44,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //requiring routes
-app.use(workout);
+//app.use(workout);
+app.use(require('./routes/workoutRoutes.js'));
 app.use(require('./routes/htmlRoutes.js'));
 
 app.listen(PORT, ()=>{
