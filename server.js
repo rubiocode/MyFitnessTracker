@@ -15,7 +15,7 @@ require('dotenv').config();
 const PORT= process.env.PORT || 3001;
 
 //different in production // if db not created yet mongoose will create db automatically
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     //giving me errors to connect...
