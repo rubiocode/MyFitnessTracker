@@ -20,7 +20,7 @@ URL of the GitHub repository: https://github.com/rubiocode/MyFitnessTracker
 * [Installation](#installation)
 * [Usage](#usage)
 * [Built With](#built-with)
-* [Future Improvements](#future-improvements)
+* [Credits](#credits)
 * [License](#license)
 
 ## Description
